@@ -7,7 +7,7 @@ import {Button, Container, Image} from "react-bootstrap";
 import Alert from '../../componentes/index';
 import Verification from '../../services/verification';
 import { useAlert } from 'react-alert';
-import Pika from '../../imagens/pika.jpg';
+import Pika from '../../imagens/pokemon.jpg';
 import FigureImage from "react-bootstrap/FigureImage";
 
 
@@ -21,6 +21,7 @@ function Main() {
     const [pokemons, setPokemons] = useState([]);
     const [pokemon, setPokemon] = useState();
 
+    
     async function pegarTemperatura() {
         try {
             let api = new Api(cidade);
@@ -98,6 +99,7 @@ function Main() {
 
     return (
         <Container >
+            <Image src={Pika} />
             <Col xs="6" sm="4">
                 <Form>
                     <Form.Group controlId="formGroupEmail">
@@ -115,6 +117,9 @@ function Main() {
             </Col>
             <h1>
                 {pokemon}
+            </h1>
+            <h1>
+                {type}
             </h1>
             <h1>
                 {chuva}
